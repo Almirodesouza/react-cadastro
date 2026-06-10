@@ -1,7 +1,8 @@
 import { useRef } from 'react'
 import api from '../../services/api'
-import { Container, Form, Title, ContainerInput, Input, Button, TopBackground, InputLabel } from './styles'
-import UsersImg from "../../assets/users.png"
+import { Container, Form, Title, ContainerInput, Input, InputLabel } from './styles'
+import Button from '../../components/Button'
+import TopBackground from '../../components/TopBackground'
 function Home() {
 
   const inputName = useRef()
@@ -12,16 +13,15 @@ function Home() {
     const data = await api.post("/usuarios", {
       email: inputEmail.current.value,
       name: inputName.current.value,
-      age: inputAge.current.value
+      age: parseInt(inputAge.current.value)
     })
 
   }
 
   return (
     <Container>
-      <TopBackground>
-        <img src={UsersImg} alt="User-Image" />
-      </TopBackground>
+
+      <TopBackground />
 
       <Form>
         <Title>Cadastrar Usuários</Title>
