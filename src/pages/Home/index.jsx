@@ -5,6 +5,7 @@ import Button from '../../components/Button'
 import TopBackground from '../../components/TopBackground'
 import Title from '../../components/Title'
 import { useNavigate } from 'react-router-dom'
+
 function Home() {
 
   const inputName = useRef()
